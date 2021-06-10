@@ -28,7 +28,7 @@
 				<ul>
 					<li>Easy to integrate</li>
 					<li>Responsive</li>
-					<li>Vanilla JS (Svelte)</li>
+					<li>Built using Svelte</li>
 				</ul>
 			</div>
 			<div class="right-half">
