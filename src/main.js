@@ -1,6 +1,6 @@
-import App from './App.svelte';
+import KeyboardContainer from './KeyboardContainer.svelte';
 
-const app = new App({
+const app = new KeyboardContainer({
 	target: document.body,
 	props: {}
 });
