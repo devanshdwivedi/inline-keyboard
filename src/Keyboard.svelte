@@ -1,6 +1,7 @@
 <script>
     import Key from './Key.svelte';
 
+    export let submitCallback;
     export let autoFocusCallback;
     export let isCapsEnabled;
     export let addCallback;
@@ -49,6 +50,7 @@
         <Key autoFocusCallback={autoFocusCallback} keyType={'medium'} clickCallback={enterCallback} label={"Enter"}/>
     </div>
     <div class="keyboard-row">
+        <Key keyType={'medium'} clickCallback={submitCallback} label={"Submit"}/>
         <Key autoFocusCallback={autoFocusCallback} isCaps={isCapsEnabled} clickCallback={addCallback} key={"z"}/>
         <Key autoFocusCallback={autoFocusCallback} isCaps={isCapsEnabled} clickCallback={addCallback} key={"x"}/>
         <Key autoFocusCallback={autoFocusCallback} isCaps={isCapsEnabled} clickCallback={addCallback} key={"c"}/>

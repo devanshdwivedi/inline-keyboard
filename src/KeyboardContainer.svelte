@@ -1,6 +1,8 @@
 <script>
 	import Keyboard from './Keyboard.svelte';
 
+	export let submitCallback;
+
 	let message = "";
 	let isCaps = false;
 
@@ -9,6 +11,11 @@
 	const onSend = () => {
 		inputRef.focus()
 	};
+
+	function onSubmit() {
+		submitCallback(message);
+		message = "";
+	}
 
 	function backspace () {
 		let newMessage = message.substring(0, message.length -1);
@@ -53,6 +60,7 @@
 		</div>
 		<div class="keyboard-container">
 			<Keyboard
+				submitCallback={onSubmit}
 				autoFocusCallback={onSend}
 				enterCallback={enter}
 				backspaceCallback={backspace}

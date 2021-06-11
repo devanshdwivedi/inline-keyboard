@@ -1,9 +1,9 @@
 <script>
-    export let key;
-    export let isCaps;
+    export let key = null;
+    export let isCaps = false;
     export let clickCallback;
-    export let autoFocusCallback;
-    export let label;
+    export let autoFocusCallback = null;
+    export let label = "";
     export let keyType = "defult";
 
     let handleClick = function() {
