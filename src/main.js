@@ -1,4 +1,4 @@
-import Keyboard from './KeyboardContainer.svelte';
+import Keyboard from './Keyboard.svelte';
 
 const printMe = (message) => {
 	console.log(message);
