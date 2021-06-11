@@ -4,6 +4,22 @@
 	let message = "";
 	let isCaps = false;
 
+	let inputRef;
+
+	const onSend = () => {
+		inputRef.focus()
+	};
+
+	function backspace () {
+		let newMessage = message.substring(0, message.length -1);
+		message = newMessage;
+	}
+
+	function enter() {
+		let newMessage = message + "\n";
+		message = newMessage;
+	}
+
 	function toggleCaps () {
 		isCaps = !isCaps;
 	}
@@ -32,11 +48,14 @@
 				</ul>
 			</div>
 			<div class="right-half">
-				<textarea value={message} class="text-type"></textarea>
+				<textarea bind:this={inputRef} value={message} class="text-type"></textarea>
 			</div>
 		</div>
 		<div class="keyboard-container">
-			<Keyboard 
+			<Keyboard
+				autoFocusCallback={onSend}
+				enterCallback={enter}
+				backspaceCallback={backspace}
 				toggleCapsCallback={toggleCaps} 
 				addCallback={updateMessage}
 				isCapsEnabled={isCaps}

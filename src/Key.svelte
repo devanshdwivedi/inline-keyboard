@@ -2,11 +2,19 @@
     export let key;
     export let isCaps;
     export let clickCallback;
+    export let autoFocusCallback;
     export let label;
     export let keyType = "defult";
+
+    let handleClick = function() {
+        clickCallback(key);
+        if(autoFocusCallback){
+            autoFocusCallback();
+        }
+    }
 </script>
 
-<div class="key-container-parent {keyType}" on:click={() => clickCallback(key)}>
+<div class="key-container-parent {keyType}" on:click={handleClick}>
     {label ? label : isCaps ? key.toUpperCase(): key}
 </div>
 
@@ -34,5 +42,9 @@
     div.space {
         width: 20%;
         max-width: 300px;
+    }
+    div.medium {
+        width: 10%;
+        max-width: 150px;
     }
 </style>
