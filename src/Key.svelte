@@ -27,11 +27,11 @@
         background-color: rgba(255, 255, 255, 0.2);
         width: 50px;
         height: 45px;
+        border-radius: 4px;
         display: inline-flex;
         outline: none;
         align-items: center;
         vertical-align: top;
-        border-radius: 4px;
         justify-content: center;
         color: white;
     }
